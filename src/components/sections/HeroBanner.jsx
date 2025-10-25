@@ -55,7 +55,7 @@ const HeroBanner = () => {
       <div className="relative z-10 mb-8">
         <div className="bg-purple-500 dark:bg-purple-600 px-6 sm:px-8 py-3 sm:py-4 transform rotate-1 shadow-lg border-3 border-black dark:border-white rounded-lg">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-wide">
-            04-05 OCT 2025
+            v3 coming soon!
           </h2>
         </div>
       </div>
@@ -67,7 +67,7 @@ const HeroBanner = () => {
           onClick={() => window.open('https://tally.so/r/3E97Nl', '_blank')}
         >
           <p className="text-center text-white dark:text-white font-black text-sm sm:text-base md:text-lg leading-relaxed tracking-wide">
-            Registrations for offline participation are closed. You can still join the online hackathon - same fun, same enthusiasm, same energy!
+            Registrations for offline participation are closed! Come here next year!
           </p>
         </div>
       </div>
