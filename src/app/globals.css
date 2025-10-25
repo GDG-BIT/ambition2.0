@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Neiko:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-gradient: linear-gradient(135deg, #8b5cf6, #ec4899);
+  --secondary-gradient: linear-gradient(135deg, #06b6d4, #10b981);
+  --accent-gradient: linear-gradient(135deg, #f59e0b, #ef4444);
+  --surface-light: rgba(255, 255, 255, 0.8);
+  --surface-dark: rgba(17, 24, 39, 0.8);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --surface-light: rgba(17, 24, 39, 0.8);
+    --surface-dark: rgba(255, 255, 255, 0.1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Neiko', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  
+  @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+}
+
+/* Enhanced custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 6px;
+  border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #374151, #1f2937);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-color: #1f2937;
+  }
+}
+
+/* Enhanced selection styles */
+::selection {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+::-moz-selection {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced focus styles */
+*:focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+}
+
+/* Smooth animations for all elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Enhanced button hover effects */
+button:hover, a:hover {
+  transform: translateY(-1px);
+}
+
+/* Improved card hover effects */
+.card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-text-primary {
+    @apply text-green-600 dark:text-green-400;
+  }
+  
+  .gradient-text-secondary {
+    @apply text-green-600 dark:text-green-400;
+  }
+  
+  .gradient-text-accent {
+    @apply text-green-600 dark:text-green-400;
+  }
+  
+  .surface-glass {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm;
+  }
+  
+  .border-brand {
+    @apply border-3 border-black;
+  }
+  
+  .shadow-brand {
+    @apply shadow-2xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 border-black transform hover:scale-110;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 border-black transform hover:scale-110;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg border-2 border-black transform hover:scale-110;
+  }
+}
+
+/*-------TimeLine Css-------*/
+
+/* Custom Timeline Animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.8), 0 0 30px rgba(147, 51, 234, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Timeline specific hover effects */
+.timeline-item:hover .timeline-content {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+}
+
+/* Status-based styling */
+.status-completed {
+  position: relative;
+  overflow: hidden;
+}
+
+.status-completed::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.2), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.status-main-event {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

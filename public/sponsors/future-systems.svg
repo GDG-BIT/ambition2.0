@@ -1,0 +1,7 @@
+<svg width="180" height="70" viewBox="0 0 180 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="70" rx="8" fill="#10b981"/>
+  <text x="90" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">FUTURE</text>
+  <text x="90" y="45" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SYSTEMS</text>
+  <rect x="15" y="30" width="12" height="12" fill="white" rx="2"/>
+  <rect x="153" y="30" width="12" height="12" fill="white" rx="2"/>
+</svg>
